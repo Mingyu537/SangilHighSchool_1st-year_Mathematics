@@ -1,0 +1,292 @@
+:root {
+  --bg: #08090f;
+  --surface: rgba(255, 255, 255, 0.08);
+  --surface-strong: rgba(255, 255, 255, 0.14);
+  --line: rgba(255, 255, 255, 0.22);
+  --text: #f8fbff;
+  --muted: #b9c2d9;
+  --cyan: #43f5ff;
+  --pink: #ff4fd8;
+  --yellow: #ffe26f;
+  --green: #8bffb8;
+  --shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+  --radius-xl: 30px;
+  --radius-lg: 22px;
+}
+
+.stApp {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(67, 245, 255, 0.24), transparent 28rem),
+    radial-gradient(circle at 82% 10%, rgba(255, 79, 216, 0.20), transparent 24rem),
+    radial-gradient(circle at 60% 90%, rgba(255, 226, 111, 0.13), transparent 26rem),
+    linear-gradient(135deg, #07080d 0%, #111420 48%, #07070b 100%);
+  color: var(--text);
+}
+
+.block-container {
+  max-width: 1120px;
+  padding: 1rem 1rem 4rem;
+}
+
+[data-testid="stHeader"] {
+  background: transparent;
+}
+
+[data-testid="stSidebar"] {
+  background: rgba(8, 9, 15, 0.96);
+}
+
+.hero-shell {
+  position: relative;
+  overflow: hidden;
+  min-height: 330px;
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  padding: clamp(2rem, 6vw, 4.5rem);
+  margin: 0.75rem 0 1.25rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04)),
+    radial-gradient(circle at 75% 25%, rgba(255, 79, 216, 0.32), transparent 18rem),
+    radial-gradient(circle at 18% 82%, rgba(67, 245, 255, 0.28), transparent 18rem);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.hero-eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--cyan);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero-shell h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(2.15rem, 6vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.hero-shell p {
+  color: var(--muted);
+  font-size: clamp(1rem, 2.7vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(0.5px);
+  transform: rotate(-18deg);
+  opacity: 0.88;
+}
+
+.orb-one {
+  width: 210px;
+  height: 210px;
+  right: 8%;
+  top: 16%;
+  background:
+    radial-gradient(circle at 34% 28%, #ffffff 0 5%, transparent 14%),
+    conic-gradient(from 45deg, var(--cyan), var(--pink), var(--yellow), var(--green), var(--cyan));
+  box-shadow: inset 16px 18px 36px rgba(255, 255, 255, 0.28), 0 24px 80px rgba(67, 245, 255, 0.24);
+}
+
+.orb-two {
+  width: 130px;
+  height: 130px;
+  right: 25%;
+  bottom: 12%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.85), transparent 15%),
+    linear-gradient(135deg, rgba(255, 226, 111, 0.95), rgba(255, 79, 216, 0.88), rgba(67, 245, 255, 0.82));
+  box-shadow: inset 10px 12px 28px rgba(255, 255, 255, 0.22), 0 20px 60px rgba(255, 79, 216, 0.20);
+}
+
+.section-title {
+  margin: 1.7rem 0 0.85rem;
+  color: var(--text);
+  font-size: 1.12rem;
+  font-weight: 850;
+}
+
+.neo-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem;
+  margin: 0.8rem 0;
+  background:
+    linear-gradient(rgba(8, 9, 15, 0.76), rgba(8, 9, 15, 0.76)) padding-box,
+    linear-gradient(135deg, rgba(67, 245, 255, 0.92), rgba(255, 79, 216, 0.74), rgba(255, 226, 111, 0.74)) border-box;
+  box-shadow: 0 20px 64px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(18px);
+}
+
+.lesson-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.lesson-card.selected {
+  border-color: rgba(67, 245, 255, 0.72);
+}
+
+.lesson-card h3 {
+  margin: 0.7rem 0 0.4rem;
+  color: var(--text);
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  letter-spacing: 0;
+}
+
+.lesson-card p,
+.mini-card span {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  padding: 0.32rem 0.72rem;
+  color: #081019;
+  background: linear-gradient(135deg, var(--cyan), var(--yellow));
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.question-box {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  line-height: 1.6;
+}
+
+.mini-card {
+  min-height: 148px;
+}
+
+.mini-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-size: 1.08rem;
+}
+
+.summary-card {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  padding-bottom: 0.55rem;
+}
+
+.summary-row span {
+  color: var(--muted);
+}
+
+.summary-row strong {
+  color: var(--text);
+  word-break: break-word;
+}
+
+.stButton > button,
+.stDownloadButton > button,
+[data-testid="stPageLink"] a {
+  min-height: 3.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #42f3ff, #ff55da 56%, #ffe26f);
+  color: #071018;
+  font-weight: 850;
+  box-shadow: 0 18px 48px rgba(255, 79, 216, 0.20);
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover,
+[data-testid="stPageLink"] a:hover {
+  border-color: rgba(255, 255, 255, 0.65);
+  color: #000;
+}
+
+[data-testid="stTextInput"] input,
+[data-testid="stNumberInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-testid="stSelectbox"] div[data-baseweb="select"] {
+  min-height: 3rem;
+  border-radius: 16px;
+}
+
+[data-testid="stForm"] {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.28);
+}
+
+[data-testid="stMetric"] {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 760px) {
+  .block-container {
+    padding: 0.75rem 0.75rem 3rem;
+  }
+
+  .hero-shell {
+    min-height: 430px;
+    border-radius: 28px;
+    padding: 1.4rem;
+  }
+
+  .orb-one {
+    width: 160px;
+    height: 160px;
+    right: -18px;
+    top: 42%;
+  }
+
+  .orb-two {
+    width: 96px;
+    height: 96px;
+    right: 42%;
+    bottom: 10%;
+  }
+
+  .lesson-card {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-row {
+    grid-template-columns: 1fr;
+  }
+
+  .neo-card {
+    border-radius: 24px;
+    padding: 1rem;
+  }
+}
